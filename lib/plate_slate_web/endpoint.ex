@@ -41,4 +41,7 @@ defmodule PlateSlateWeb.Endpoint do
     signing_salt: "/t8k9qd1"
 
   plug PlateSlateWeb.Router
+
+  plug Absinthe.Plug,
+    schema: MyAppWeb.Schema
 end

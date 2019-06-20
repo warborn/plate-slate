@@ -8,4 +8,10 @@ defmodule PlateSlateWeb.Router do
   scope "/api", PlateSlateWeb do
     pipe_through :api
   end
+
+  forward "/graphql", Absinthe.Plug, schema: PlateSlateWeb.Schema
+
+  forward "/graphiql", Absinthe.Plug.GraphiQL,
+    schema: PlateSlateWeb.Schema,
+    interface: :simple
 end
